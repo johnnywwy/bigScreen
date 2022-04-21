@@ -11,45 +11,44 @@ export const Chart2 = () => {
     let myChart = echarts.init(divRef.current);
     // 绘制图表
     myChart.setOption(createEchartsOptions({
-      ...baseEchartOptions,
-      grid: {
-        x: px(100),
-        y: px(40),
-        x2: px(40),
-        y2: px(40),
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        }
-      },
       xAxis: {
         type: 'value',
-        boundaryGap: [0, 0.01]
+        boundaryGap: [0, 0.01],
+        splitLine: {show: false},
+        axisLabel: {show: false}
       },
       yAxis: {
         type: 'category',
-        data: ['巴西', '印尼', '灭国', '印度', '中国', '世界人口','加拿大','澳洲','日本']
+        data: ['城关区公安局', '七里河区公安局', '西固区公安局', '安宁区公安局', '红古区公安局',
+          '永登县公安局', '皋兰县公安局', '榆中县公安局', '新区公安局'],
+        axisLabel: {
+          formatter(val) {
+            return val.replace('公安局', '\n公安局');
+          }
+        }
       },
       series: [
         {
-          name: '破案排名1',
+          name: '2011年',
           type: 'bar',
-          data: [18203, 23489, 29034, 104970, 131744, 630230,456415, 104970,456881]
+          data: [1, 2, 3, 4, 5, 6, 7, 8, 9]
         },
         {
-          name: '破案排名2',
+          name: '2012年',
           type: 'bar',
-          data: [19325, 23438, 31000, 121594, 134141, 681807,134141, 681807,104970]
+          data: [2, 3, 4, 5, 6, 7, 8, 9, 10]
         }
       ],
     }));
   }, []);
   return (
-    <div className="bordered 管辖统计">
+    <div className="bordered 破获排名">
       <h2>按键破获排名</h2>
       <div ref={divRef} className="chart"/>
+      <div className="legend">
+        <span className="first"/> 破案排名1
+        <span className="second"/> 破案排名1
+      </div>
     </div>
   );
 };
