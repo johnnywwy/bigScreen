@@ -32,17 +32,23 @@ code {
 body {
   font-family: $font-hei;
   font-size: 16px;
+  background: #010311;
 }
 
 #root {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background: #eee;
+
+
 }
 
 .App {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+h1,h2,h3,h4,h5{
+  font-size: 16px;
+
 }
