@@ -1,9 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
+import {px} from '../shared/px';
+import {baseEchartOptions} from '../shared/base-echart-options';
 
-const px = (n) => {
-  return n / 2420 * (window as any).pageWidth;
-};
 export const Chart1 = () => {
   const divRef = useRef(null);
   useEffect(() => {
@@ -11,12 +10,7 @@ export const Chart1 = () => {
     let myChart = echarts.init(divRef.current);
     // 绘制图表
     myChart.setOption({
-      textStyle: {
-        fontSize: px(12),
-        color: '#79839e'
-      },
-      title: {show: false},
-      legend: {show: false},
+      ...baseEchartOptions,
       xAxis: {
         data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
         axisTick: {show: false},
@@ -36,12 +30,6 @@ export const Chart1 = () => {
           }
         },
 
-      },
-      grid: {
-        x: px(40),
-        y: px(40),
-        x2: px(40),
-        y2: px(40),
       },
       yAxis: {
         splitLine: {show: false},
@@ -67,5 +55,4 @@ export const Chart1 = () => {
       <div ref={divRef} className="chart"/>
     </div>
   );
-
 };
