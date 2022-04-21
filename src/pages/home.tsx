@@ -3,6 +3,7 @@ import './home.scss';
 import headerBg from '../images/img.png';
 import {Chart1} from '../components/chart1'
 import {Chart2} from '../components/chart2'
+import {Chart3} from '../components/chart3'
 
 export const Home = () => {
   return (
@@ -13,7 +14,8 @@ export const Home = () => {
           <Chart1/>
           <Chart2/>
         </section>
-        <section className="bordered section2">
+        <section className=" section2">
+          <Chart3/>
         </section>
         <section className="bordered section3"/>
         <section className="bordered section4"/>
