@@ -6,8 +6,8 @@ console.log(headerBg);
 console.log();
 export const Home = () => {
   return (
-    <div>
-      <div className='x' style={{backgroundImage:`url(${headerBg})`}}></div>
+    <div className='home'>
+      <header style={{backgroundImage:`url(${headerBg})`}}/>
     </div>
   );
 };
