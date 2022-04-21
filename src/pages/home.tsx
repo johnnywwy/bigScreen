@@ -18,8 +18,8 @@ export const Home = () => {
         <section className="bordered section3"/>
         <section className="bordered section4"/>
         <section className="bordered section5"/>
-        <footer>123</footer>
       </main>
+      <footer>@github/johnnywwy</footer>
     </div>
   );
 };
