@@ -23,7 +23,6 @@ export const Chart4 = () => {
         splitLine: {lineStyle: {color: '#073E78'}},
         axisLabel: {
           formatter(val) {
-            console.log(val);
             return val * 100 + '%';
           }
         }
