@@ -1,7 +1,5 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import {px} from '../shared/px';
-import {baseEchartOptions} from '../shared/base-echart-options';
 import {createEchartsOptions} from '../shared/create-echarts-options';
 
 export const Chart2 = () => {
@@ -65,7 +63,7 @@ export const Chart2 = () => {
   }, []);
   return (
     <div className="bordered 破获排名">
-      <h2>按键破获排名</h2>
+      <h2>案件破获排名</h2>
       <div ref={divRef} className="chart"/>
       <div className="legend">
         <span className="first"/> 破案排名1
