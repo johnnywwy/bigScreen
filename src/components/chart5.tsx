@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const Chart5 = () => {
-
   return (
     <div className="战果">
       <h2>往年战果数对比</h2>
