@@ -7,7 +7,7 @@ export const Chart11 = () => {
   const divRef = useRef(null);
   const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
   useEffect(() => {
-    let myChart = echarts.init(divRef.current);
+    var myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
       color: colors,
       xAxis: {show: false},
@@ -44,7 +44,7 @@ export const Chart11 = () => {
   }, []);
 
   return (
-    <div className="chart11">
+    <div className="年龄段-图1">
       <div className="chart">
         <div className="main" ref={divRef}/>
       </div>
