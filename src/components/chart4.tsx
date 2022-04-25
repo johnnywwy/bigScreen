@@ -5,6 +5,10 @@ import {createEchartsOptions} from '../shared/create-echarts-options';
 
 export const Chart4 = () => {
   const divRef = useRef(null);
+  const date = [
+    0.15, 0.13, 0.11, 0.13, 0.14, 0.15,
+    0.16, 0.18, 0.21, 0.20, 0.17, 0.16, 0.15,
+  ];
   useEffect(() => {
     // 基于准备好的dom，初始化echarts实例
     let myChart = echarts.init(divRef.current);
@@ -31,8 +35,7 @@ export const Chart4 = () => {
       series: [
         {
           name: '故意伤人',
-          data: [0.15, 0.13, 0.11, 0.13, 0.14, 0.15,
-            0.16, 0.18, 0.21, 0.19, 0.17, 0.16, 0.15],
+          data: date,
           type: 'line',
           symbol: 'circle',
           symbolSize: px(10),
