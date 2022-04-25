@@ -3,16 +3,42 @@ import * as echarts from 'echarts';
 import {px} from '../shared/px';
 import {baseEchartOptions} from '../shared/base-echart-options';
 
+
 export const Chart1 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const date = [
+    {name: '城关区', number: 10},
+    {name: '七里区', number: 20},
+    {name: '西固区', number: 36},
+    {name: '安宁区', number: 24},
+    {name: '红谷区', number: 26},
+    {name: '红谷区', number: 19},
+    {name: '皋兰区', number: 40},
+    {name: '渝中区', number: 10},
+    {name: '兰州区', number: 37}
+  ];
   useEffect(() => {
-    // 基于准备好的dom，初始化echarts实例
-    let myChart = echarts.init(divRef.current);
-    // 绘制图表
-    myChart.setOption({
+    setInterval(() => {
+      const newDate = [
+        {name: '城关区', number: Math.random() * 20},
+        {name: '七里区', number: Math.random() * 20},
+        {name: '西固区', number: Math.random() * 20},
+        {name: '安宁区', number: Math.random() * 20},
+        {name: '红谷区', number: Math.random() * 20},
+        {name: '红谷区', number: Math.random() * 20},
+        {name: '皋兰区', number: Math.random() * 20},
+        {name: '渝中区', number: Math.random() * 20},
+        {name: '兰州区', number: Math.random() * 20}
+      ];
+      x(newDate);
+    }, 2000);
+  });
+  const x = (date) => {
+    myChart.current.setOption({
       ...baseEchartOptions,
       xAxis: {
-        data: ['兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区', '兰州新区'],
+        data: date.map(i => i.name),
         axisTick: {show: false},
         axisLine: {
           lineStyle: {color: '#083B70'}
@@ -44,10 +70,16 @@ export const Chart1 = () => {
       series: [
         {
           type: 'bar',
-          data: [10, 20, 36, 41, 15, 26, 37, 18, 29]
+          data: date.map(i => i.number)
         }
       ]
     });
+  };
+  useEffect(() => {
+    // 基于准备好的dom，初始化echarts实例
+    myChart.current = echarts.init(divRef.current);
+    // 绘制图表
+    x(date);
   }, []);
   return (
     <div className="bordered 管辖统计">
